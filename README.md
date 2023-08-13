@@ -5,7 +5,7 @@
 `motdGO` is a library based on [figlet4go](https://github.com/mbndr/figlet4go) which is a go library which is a port of [FIGlet](http://www.figlet.org/) to Golang.  
 With `motdGO` it's easy to create **ascii text banners for motd** in the command-line or with the given api.
 
-![screenshot](./screenshot/motdGO.png)
+![screenshot](./screenshot/figlet4go.png)
 
 ## Build locally
 
