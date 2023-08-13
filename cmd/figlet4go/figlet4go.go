@@ -51,6 +51,7 @@ func main() {
 
 	// Render the string
 	renderStr, err := ascii.RenderOpts(*str, options)
+	formattedStr := strings.ReplaceAll(renderStr, "L", "_")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -64,7 +65,7 @@ func main() {
 			log.Fatal(err)
 		}
 		// Write to file
-		b, err := f.WriteString(renderStr)
+		b, err := f.WriteString(formattedStr)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -73,7 +74,7 @@ func main() {
 	}
 
 	// Default is printing
-	fmt.Print(renderStr)
+	fmt.Print(formattedStr)
 }
 
 // Get a slice with colors to give to the RenderOptions
