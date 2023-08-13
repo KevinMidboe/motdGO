@@ -4,7 +4,7 @@
 // standard.flf
 // DO NOT EDIT!
 
-package figlet4go
+package motdGO
 
 import (
 	"bytes"

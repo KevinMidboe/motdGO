@@ -1,4 +1,4 @@
-package figlet4go
+package motdGO
 
 import (
 	"encoding/hex"
