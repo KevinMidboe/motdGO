@@ -1,4 +1,7 @@
-.PHONY: build install
+.PHONY: build install init
+
+init:
+	go mod init motdGO
 
 build:
 	export GO11MODULE="auto" \
