@@ -26,6 +26,7 @@ Download and run binary:
 
 ```bash
 wget 'https://raw.githubusercontent.com/kevinmidboe/motdGO/main/motd'
+chmod +x motd
 ./motd -str 'hello world'
 ```
 
