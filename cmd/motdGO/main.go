@@ -26,8 +26,8 @@ func main() {
 	validate()
 
 	// Create objects
-	ascii := figlet4go.NewAsciiRender()
-	options := figlet4go.NewRenderOptions()
+	ascii := motdGO.NewAsciiRender()
+	options := motdGO.NewRenderOptions()
 
 	// Load fonts
 	if *fontpath != "" {
@@ -38,9 +38,9 @@ func main() {
 	options.FontName = *font
 
 	// Set the parser
-	p, err := figlet4go.GetParser(*parser)
+	p, err := motdGO.GetParser(*parser)
 	if err != nil {
-		p, _ = figlet4go.GetParser("terminal")
+		p, _ = motdGO.GetParser("terminal")
 	}
 	options.Parser = *p
 
@@ -79,33 +79,33 @@ func main() {
 
 // Get a slice with colors to give to the RenderOptions
 // Splits the given string with the separator ";"
-func getColorSlice(colorStr string) []figlet4go.Color {
+func getColorSlice(colorStr string) []motdGO.Color {
 
 	givenColors := strings.Split(colorStr, ";")
 
-	colors := make([]figlet4go.Color, len(givenColors))
+	colors := make([]motdGO.Color, len(givenColors))
 
 	for i, c := range givenColors {
 		switch c {
 		case "black":
-			colors[i] = figlet4go.ColorBlack
+			colors[i] = motdGO.ColorBlack
 		case "red":
-			colors[i] = figlet4go.ColorRed
+			colors[i] = motdGO.ColorRed
 		case "green":
-			colors[i] = figlet4go.ColorGreen
+			colors[i] = motdGO.ColorGreen
 		case "yellow":
-			colors[i] = figlet4go.ColorYellow
+			colors[i] = motdGO.ColorYellow
 		case "blue":
-			colors[i] = figlet4go.ColorBlue
+			colors[i] = motdGO.ColorBlue
 		case "magenta":
-			colors[i] = figlet4go.ColorMagenta
+			colors[i] = motdGO.ColorMagenta
 		case "cyan":
-			colors[i] = figlet4go.ColorCyan
+			colors[i] = motdGO.ColorCyan
 		case "white":
-			colors[i] = figlet4go.ColorWhite
+			colors[i] = motdGO.ColorWhite
 		default:
 			// Try to parse the TrueColor from the string
-			color, err := figlet4go.NewTrueColorFromHexString(c)
+			color, err := motdGO.NewTrueColorFromHexString(c)
 			if err != nil {
 				log.Fatal(err)
 			}
