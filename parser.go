@@ -22,6 +22,8 @@ var parsers map[string]Parser = map[string]Parser{
 	"terminal": {"terminal", "", "", "\n", nil},
 	// Parser for HTML code
 	"html": {"html", "<code>", "</code>", "<br>", map[string]string{" ": "&nbsp;"}},
+	// Parser for motd file
+	"motd": {"motd", "#!/bin/sh\ncat << 'EOF'\n", "EOF", "\n", nil},
 }
 
 // GetParser returns a parser by its key
